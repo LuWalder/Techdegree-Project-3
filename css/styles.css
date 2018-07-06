@@ -18,6 +18,8 @@ header {
 
 fieldset {
   border: none;
+  margin: 0;
+  padding: 0;
 }
 
 label,
@@ -25,26 +27,39 @@ input,
 select {
   margin-top: 4px;
   margin-bottom: 4px;
+  border: none;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"] {
   width: 90%;
+  height: 30px;
+  font-size: 20px;
 }
 
 form {
   color: rgb(58, 70, 93);
+  background: rgba(209, 209, 209, 0.18);
+  padding-bottom: 20px;
+
 }
 
 legend {
   color: #2f3944;
   padding-top: 30px;
-  border-top: #2f3944 solid 5px;
+  padding-bottom: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 10px;
+  display: block;
+  width: 90%;
+  text-align: center;
+  border-top: #2f3944 solid 2px;
 }
 
 input {
-  background: rgb(245, 245, 245);
+  background: rgb(230, 230, 230);
   border-radius: 5px;
 }
 
@@ -57,7 +72,29 @@ textarea {
   margin: auto;
   height: 90px;
   border-radius: 5px;
-  background: rgb(245, 245, 245);
+  background: rgb(230, 230, 230);
+  display: block;
+  border: none;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+  outline: none;
+  -webkit-transition: border 0.2s;
+  transition: border 0.2s;
+  -webkit-transition: background 3s;
+  transition: background 3s;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border: 3px solid darkgrey;
+  background: darkgrey;
+  color: white;
 }
 
 
@@ -72,7 +109,9 @@ textarea {
 .second-header {
   width: 90%;
   margin: auto;
-  border-bottom: double 2px black;
+  margin-bottom: 3px;
+  border-bottom: solid 5px #2f3944;
+
 }
 
 .second-header h2 {
@@ -82,10 +121,18 @@ textarea {
 .second-header h3 {
   padding-top: 20px;
   padding-bottom: 20px;
+  color: grey;
 }
 
 .contact-info {
+  margin: auto;
+  padding-right: 0;
+}
 
+.form-1,
+.form-2 {
+  width: 90%;
+  margin: auto;
 }
 
 .sign-up{
@@ -98,15 +145,21 @@ textarea {
   height: 60px;
   font-size: 20px;
   border: none;
+  display: block;
 }
 
 .newsletter label {
-  font-size: 13;
-  line-height: 1.8;
+  padding-bottom: 5px;
+  display: inline-block;
+
 }
 
 .copyright {
   text-align: center;
+  padding-top: 15px;
+  padding-bottom: 50px;
+  color: grey;
+  font-style: italic;
 }
 
 
@@ -114,6 +167,10 @@ textarea {
   width: 50%;
 }
 
+input::placeholder {
+  text-align: right;
+  padding-right: 10px;
+}
 
 
 
@@ -126,7 +183,45 @@ textarea {
 
 
 
-@media (min-width=768px) {
+@media (min-width: 768px) {
 
+  .form-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
+  input,
+  select {
+    flex-basis: 79%;
+  }
+
+  label {
+    flex-basis: 20%;
+  }
+
+  select {
+    height: 36px;
+  }
+
+  input[id="zip"] {
+    flex-basis: 20%;
+  }
+
+  legend {
+    width: 100%;
+    margin: auto;
+
+  }
+
+  .second-header {
+    width: 66%;
+    margin: auto;
+    margin-bottom: 5px;
+  }
+
+  .media-width {
+    width: 66%;
+    margin: auto;
+  }
 }
